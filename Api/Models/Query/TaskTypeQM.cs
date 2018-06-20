@@ -5,12 +5,11 @@ using System.Threading.Tasks;
 
 namespace Api.Models.Query
 {
-    public class ClientQM
+    public class TaskTypeQM
     {
         public int Id { get; set; }
-        public string Code { get; set; }
         public string Name { get; set; }
-        public ClientTypeQM Type { get; set; }
-        public IEnumerable<AgreementQM> Agreements { get; set; }
+        public string Code { get; set; }
+        public IEnumerable<TaskResultsGroupQM> ResultsGroups { get; set; }
     }
 }

@@ -9,9 +9,9 @@ namespace Api.Models.Query
     public class TaskQM
     {
         public int Id { get; set; }
-        public string Title { get; set; }
         public DateTime Date { get; set; }
-        public string Description { get; set; }
-        public virtual int TypeId { get { return TypeId; } set { TypeId = (int)TaskType.Free; } }
+        public TaskTypeQM Type { get; set; }
+        public ClientQM Client { get; set; }
+        public TaskResultsItemQM Result { get; set; }
     }
 }

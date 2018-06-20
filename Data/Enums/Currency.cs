@@ -10,11 +10,11 @@ namespace Data.Enums
     /// </summary>
     public enum Currency
     {
-        [RussianName("Н/Д")]
+        [RussianName(ShortName = "н/д", Symbol = "", Abbreviation = "", Name = "Неизвестно")]
         Undefined = 0,
-        [RussianName("Грн")]
+        [RussianName(ShortName = "грн", Symbol = "₴", Abbreviation = "UAH", Name = "Украинская гривна")]
         UAH = 1,
-        [RussianName("Долл")]
+        [RussianName(ShortName = "долл", Symbol = "$", Abbreviation = "USD", Name = "Доллар США (Межбанк)")]
         USD_Межбанк = 2
     }
 }

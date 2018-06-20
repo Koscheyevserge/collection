@@ -1,16 +1,17 @@
-﻿using System;
+﻿using Api.Models.Query;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace Api.Models.Query
 {
-    public class ClientQM
+    public class TaskResultsItemQM
     {
         public int Id { get; set; }
-        public string Code { get; set; }
         public string Name { get; set; }
-        public ClientTypeQM Type { get; set; }
-        public IEnumerable<AgreementQM> Agreements { get; set; }
+        public string Code { get; set; }
+
+        public int ResultsGroupId { get; set; }
     }
 }

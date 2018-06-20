@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Data.Contexts;
 using Data.Initializers;
 using Microsoft.AspNetCore.Builder;
@@ -28,12 +29,16 @@ namespace Api
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAutoMapper();
             services.AddMvc();
+            var connection = string.Empty;
             if (Environment.IsDevelopment())
             {
-                services.AddDbContext<DevContext>(opt => opt.UseInMemoryDatabase("DevCollectionDatabase"));
+                connection = Configuration.GetConnectionString("Dev");
                 services.AddScoped<IDbInitializer, DevInitializer>();
             }
+            services.AddDbContext<ULFContext>(opt => opt.UseSqlServer(connection,
+                options => options.MigrationsAssembly("Api")));
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, IDbInitializer dbInitializer)

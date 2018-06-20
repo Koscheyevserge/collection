@@ -12,10 +12,7 @@ namespace Api.Models.Query
         public DateTime AgreementDate { get; set; }
         public DateTime ShippmentDate { get; set; }
         public double ParticipationAmount { get; set; }
-        public int CurrencyId { get; set; }
-        public string CurrencyName { get; set; }
-        public double CurrencyRate { get; set; }
-        public double ParticipationAmountUAH { get; set; }
+        public CurrencyQM Currency { get; set; }
         public int ClientId { get; set; }
         public IEnumerable<PaymentScheduleItemQM> PaymentSchedule { get; set; }
         public IEnumerable<PaymentQM> Payments { get; set; }
