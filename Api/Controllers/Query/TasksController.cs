@@ -14,10 +14,10 @@ namespace Api.Controllers
     [Route("api/query/tasks")]
     public class TasksController : Controller
     {
-        private ULFContext _context;
+        private CollectionContext _context;
         private readonly IMapper mapper;
 
-        public TasksController(ULFContext context, IMapper iMapper)
+        public TasksController(CollectionContext context, IMapper iMapper)
         {
             _context = context;
             mapper = iMapper;
@@ -32,11 +32,8 @@ namespace Api.Controllers
         [HttpGet("{id}")]
         public TaskQM Get(int id)
         {
-            var task = mapper.Map<TaskQM>(_context.Tasks.Include(t => t.Result).Include(t => t.Type)
-                .ThenInclude(t => t.ResultsGroups).FirstOrDefault(t => t.Id == id));
-            task.Type.ResultsGroups.ToList().ForEach(rg => rg.Items =
-                mapper.Map<IEnumerable<TaskResultsItemQM>>(_context.TaskResultsItems.Where(tri => tri.ResultsGroupId == rg.Id)));
-            return task;
-        }        
+            return mapper.Map<TaskQM>(_context.Tasks.Include(t => t.Result).Include(t => t.Type)
+                .ThenInclude(t => t.Results).Include(t => t.Client).FirstOrDefault(t => t.Id == id));
+        }
     }
 }

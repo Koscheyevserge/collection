@@ -12,5 +12,7 @@ namespace Api.Models.Query
         public string Name { get; set; }
         public ClientTypeQM Type { get; set; }
         public IEnumerable<AgreementQM> Agreements { get; set; }
+        public IEnumerable<TaskQM> Tasks { get; set; }
+        public IEnumerable<ContactQM> Contacts { get; set; }
     }
 }

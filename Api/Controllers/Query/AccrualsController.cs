@@ -13,10 +13,10 @@ namespace Api.Controllers.Query
     [Route("api/query/accruals")]
     public class AccrualsController : Controller
     {
-        private ULFContext _context;
+        private CollectionContext _context;
         private IMapper _mapper;
 
-        public AccrualsController(ULFContext context, IMapper mapper)
+        public AccrualsController(CollectionContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

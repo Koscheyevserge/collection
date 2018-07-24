@@ -15,6 +15,6 @@ namespace Data.Entities
         public string Code { get; set; }
 
         public ICollection<Task> Tasks { get; set; }
-        public ICollection<TaskResultsGroup> ResultsGroups { get; set; }
+        public ICollection<TaskResult> Results { get; set; }
     }
 }

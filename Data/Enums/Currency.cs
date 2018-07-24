@@ -15,6 +15,8 @@ namespace Data.Enums
         [RussianName(ShortName = "грн", Symbol = "₴", Abbreviation = "UAH", Name = "Украинская гривна")]
         UAH = 1,
         [RussianName(ShortName = "долл", Symbol = "$", Abbreviation = "USD", Name = "Доллар США (Межбанк)")]
-        USD_Межбанк = 2
+        USD_Межбанк = 2,
+        [RussianName(ShortName = "долл", Symbol = "$", Abbreviation = "USD", Name = "Доллар США (МБ фин.)")]
+        USD_MB_Fin = 3
     }
 }

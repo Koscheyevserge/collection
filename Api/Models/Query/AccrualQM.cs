@@ -8,9 +8,9 @@ namespace Api.Models.Query
     public class AccrualQM
     {
         public int Id { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime? Date { get; set; }
         public double Amount { get; set; }
         public CurrencyQM Currency { get; set; }
-        public int AgreementId { get; set; }
+        public int? AgreementId { get; set; }
     }
 }

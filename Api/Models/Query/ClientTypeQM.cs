@@ -8,5 +8,6 @@ namespace Api.Models.Query
     public class ClientTypeQM
     {
         public int Id { get; set; }
+        public string Name { get; set; }
     }
 }

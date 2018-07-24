@@ -11,7 +11,7 @@ namespace Data.Entities
     /// </summary>
     public class Task : BaseEntity
     {
-        public DateTime Date { get; set; }
+        public DateTime? Date { get; set; }
 
         public int? ClientId { get; set; }
         public Client Client { get; set; }
@@ -20,6 +20,9 @@ namespace Data.Entities
         public TaskType Type { get; set; }
 
         public int? ResultId { get; set; }
-        public TaskResultsItem Result { get; set; }
+        public TaskResult Result { get; set; }
+
+        public string UserId { get; set; }
+        public User User { get; set; }
     }
 }
